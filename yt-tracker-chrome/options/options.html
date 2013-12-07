@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Options for Youtube IRC Scrobbler</title>
+
+    <link href="bootstrap-combined.no-icons.min.css" rel="stylesheet">
+    <link href="fontawesome/font-awesome.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="options.css" />
+
+    <script src="../jquery-1.10.2.min.js"></script>
+    <script src="bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="options.js"></script>
+
+    <!-- provides connectores info -->
+    <script type="text/javascript" src="../inject.js"></script>
+
+    <!-- provides authorize() function -->
+	<script type="text/javascript" src="../defines.js"></script>
+	<script type="text/javascript" src="../scrobbler.js"></script>
+</head>
+<body>
+
+<br /><br />
+
+<div class="row-fluid">
+    <div class="span1"></div>
+
+    <div class="span5">
+
+
+        <div class="accordion" id="accordionLeft">
+
+            <div class="accordion-group">
+                <div class="accordion-heading">
+                        <h1><i class="icon-gear"></i> Options</h1>
+                </div>
+                <div id="options" class="accordion-body">
+                    <div class="accordion-inner">
+                        <h4>General</h4>
+                        <ul>
+                            <li>
+                                <input type="text" id="apiURL">
+                                <label for="apiURL"
+                                       title="API URL">Enter the API url</label>
+                            </li>
+                            <li>
+                                <input type="text" id="nickname">
+                                <label for="nickname"
+                                       title="Nickname which will be displayed in IRC when scrobbling videos">Enter your nickname</label>
+                            </li>
+                            <li>
+                                <button type="button" id="saveButton">Apply</button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="span1"></div>
+
+</div>
+
+</body>
+</html>
