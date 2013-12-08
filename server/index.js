@@ -29,9 +29,10 @@ http.createServer(function(req, res) {
     var query = parsedUrl.query;
     var nick = query.nick;
     var videoUrl = query.url;
+    var title = query.title;
     console.log(JSON.stringify(query));
     channels.forEach(function(channel) {
-       client.say(channel, nick + " is watching " + videoUrl);
+       client.say(channel, nick + ' is watching "' + title + '" - '+ videoUrl);
     });
   }
   res.writeHead(200, {'Content-Type': 'text/plain'});

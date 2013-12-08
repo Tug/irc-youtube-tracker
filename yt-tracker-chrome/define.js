@@ -11,18 +11,6 @@ var NOTIFICATION_SEPARATOR = ':::';
 
 
 /**
- * Page action icons
- */
-var ICON_LOGO = 'icon.png';                      // Audioscrobbler logo
-var ICON_UNKNOWN = 'icon_unknown.png';           // not recognized
-var ICON_NOTE = 'icon_note.png';                 // now playing
-var ICON_NOTE_DISABLED = 'icon_note_gray.png';   // disabled
-var ICON_TICK = 'icon_tick.png';                 // scrobbled
-var ICON_TICK_DISABLED = 'icon_tick_gray.png';   // disabled
-var ICON_CONN_DISABLED = 'icon_cross_gray.png';  // connector is disabled
-
-
-/**
  * Icon - title - popup set identificators
  */
 var ACTION_UNKNOWN = 1;

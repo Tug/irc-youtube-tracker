@@ -3,8 +3,6 @@
 var lastUrl = '';
 
 
-console.log("World 1");
-
 // we will observe changes at the main player element
 // which changes (amongst others) on ajax navigation
 var target = document.querySelector('#player-api');
@@ -35,8 +33,6 @@ $(window).unload(function() {
     return true;
 });
 
-
-console.log("World 2");
 /**
  * Trim whitespaces from both endings of the string
  */
@@ -76,8 +72,16 @@ function updateNowPlaying() {
       //alert('YouTube has probably changed its code. Please get newer version of the Last.fm Scrobbler extension');
       return;
    }
-console.log("World 3", videoID);
-   chrome.runtime.sendMessage({type: 'nowPlaying', videoID: videoID });
+
+   // http://code.google.com/intl/cs/apis/youtube/2.0/developers_guide_protocol_video_entries.html
+   var googleURL = "https://gdata.youtube.com/feeds/api/videos/" + videoID + "?alt=json";
+
+   // Get clip info from youtube api
+   chrome.runtime.sendMessage({type: "xhr", url: googleURL}, function(response) {
+      var info = JSON.parse(response.text);
+      var title = info.entry.title.$t;
+      chrome.runtime.sendMessage({type: 'nowPlaying', videoID: videoID, title: title });
+   });
 
 }
 

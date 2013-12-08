@@ -11,8 +11,6 @@ var scrobbleTimeout = null;
 // is scrobbling disabled?
 var disabled = false;
 
-console.log("hello");
-
 /**
  * Default settings & update notification
  */
@@ -133,11 +131,13 @@ chrome.runtime.onMessage.addListener(
                   nowPlayingTab = sender.tab.id;
 
                   var videoID = request.videoID;
+                  var title = request.title;
                   var videoURL = "http://www.youtube.com/watch?v="+videoID;
 
                   video = {
                      nick: localStorage.nick,
-                     url: videoURL
+                     url: videoURL,
+                     title: title
                   };
 
                   // make the connection to last.fm service to notify
