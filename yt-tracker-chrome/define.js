@@ -1,7 +1,7 @@
 
 var JQUERY_PATH = "jquery-1.6.1.min.js";
 
-var MINIMUM_TIME = 15; // 15s
+var MINIMUM_TIME = 20; // 20 seconds
 
 /**
  * Notifications
